@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.깨짐현상방지::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+#전체 { 
+    /* 아이디를 호출하는 방법 =#
+    아이디는 전체 사이트에서 유일한 이름이어야 한다.
+    아이디는 하나의 이름만 가져야한다. */
+    background-color: #C4DFDF;
+    width: 1000px;
+    /* margin: 상하 좌우; */
+    margin: 30px auto 0;   /* 위 좌우 아래 */
+    
+    /* 
+    margin 0 auto;는 다음과 같다.
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto; */
+}
+.놀부 {
+    padding: 20px;
+}
+.놀부 .자식 {
+    width: 23.5%;
+    float: left;
+    margin-right: 2%;
+    background-color: #D2E9E9;
+}
+.놀부 .자식.자식1 {}
+.놀부 .자식.자식1 img {
+    width: 100%;
+    vertical-align: middle;
+}
+.놀부 .자식.자식2 {
+    /* 공간의 넓이=padding-left + border-left+width + padding-right+border-right
+    공간의 높이=padding-top + border-top + height + padding-bottom+border-bottom  */
+
+    /* 공간의 넓이=10px + 5px + 25% + 10px +5px
+    공간의 높이=10px + 5px +자식의높이 + 10px +5px */
+    padding: 10px;
+    border: 5px solid black;
+    box-sizing: border-box;
+    background-image: url(https://recipe1.ezmember.co.kr/cache/recipe/2019/03/30/ab3e044128060f6d78e9bb55c3f3e45e1.jpg);
+}
+.놀부 .자식.자식3 {
+    height: 200px;
+    background-image: url(https://cdn-icons-png.flaticon.com/128/3419/3419250.png);
+    background-size: 50px;
+    background-repeat: no-repeat;
+    background-position: center center; /* x축 y축 */
+    background-position: 50% top;
+}
+.놀부 .자식.자식4 {
+    margin-right: 0;
+    height: 200px;
+    background-image: url(https://item.kakaocdn.net/do/0a35434399d776f8f6b17ddccdf0683582f3bd8c9735553d03f6f982e10ebe70);
+    background-size: cover; /* 비율을 가로기준으로 맞춘다 */
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+.놀부 .자식.자식4 .text {
+    background-color: #0c134f;
+    color: #fff;
+    position: absolute;
+    left: 50%; /* 부모의 넓이 기준 */
+    top: 100%;  /* 부모의 높이 기준 */
+    padding: 10px 30px;
+    transform: translate(-50%, -50%); /* x축, y축 으로 본인의 위치를 변경한다 기준은 자신 */
+    border-radius: 10px;
+    opacity: 0;
+    transition: 0.2s;
+}
+.놀부 .자식.자식4:hover .text {
+    opacity: 1;
+    top: 50%;
+    }
