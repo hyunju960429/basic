@@ -1,0 +1,150 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 14px; /* 기본값은 16px */
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* reset */
+li {
+    list-style: none; /* 불릿문자 삭제 */
+}
+a {
+    color: #000; /* 글자색 */
+    text-decoration: none; /* 글자밑줄삭제 */
+}
+
+/* wrap */
+#wrap {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+/* header */
+#header {}
+#header h1 {
+    float: left;
+    width: 120px;
+}
+#header h1 a img {
+    width: 100%;
+}
+#header .nav {
+    float: right;
+    text-align: center; /* 자식요소중 인라인요소를 가운데 정렬 */
+    margin-top: 20px;
+}
+#header .nav ul {
+}
+#header .nav ul li {
+    float: left;
+    width: 120px;
+    position: relative;
+}
+#header .nav ul a { /* 인라인요소 */
+    background-color: #ccc;
+    display: block;
+    padding: 20px 15px;
+    transition: 0.3s;  /* 1000ms >> 1s , 0.3s >> 300ms */
+}
+#header .nav ul a:hover {
+    background-color: #ddd;
+}
+#header .nav ul li .submenu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    display: none;
+    z-index: 10;  /* >>position이 없으면 적용이 안된다 */
+}
+
+/* banner */
+#banner {
+    height: 378px;
+    overflow: hidden;
+}
+#banner .slideList {
+    position: relative;
+}
+#banner .slideList .slideImg {
+    position: relative;
+}
+#banner .slideList .slideImg h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(0,0,0,0.5);
+    padding: 10px 30px;
+    color: #fff;
+    border-radius: 20px;
+}
+#banner .slideList .slideImg img {
+    /* img태그는 인라인요소이지만 넓이를 인식한다. */
+    /* img태그의 특징
+    인라인요소 >> 예측하지 못하는 공간을 가지고 있다.
+    해결방법 2가지
+    1. display: block;
+    2. vertical-align : top; */
+    width: 100%;
+    vertical-align: top;
+}
+
+/* content1 */
+#content1 {
+    margin-top: 15px;
+}
+#content1 .notice{
+    position: relative;
+    width: 49%;
+    height: 218px;
+    float: left;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 30px;
+}
+#content1 .ad{
+    background-color: #b68a8a;
+    width: 49%;
+    height: 218px;
+    float: right;
+}
+#content1 .notice ul {}
+#content1 .notice ul li {
+    float: left;
+    margin-right: 10px;
+}
+#content1 .notice ul li a {
+    font-size: 24px;
+    color: #999;
+    font-weight: bold; /* 폰트의 두께 */
+}
+#content1 .notice ul li.active a {
+    color: #000;
+}
+#content1 .notice ul li ul {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+}
+#content1 .notice ul li ul li {}
+#content1 .notice ul li ul li a {
+    font-size: 16px;
+    float: left;
+    width: 68%;
+    /* ~말줄임말 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    /* 말줄임말~ */
+    font-weight: normal; /* 폰트 두께를 초기화 */
+}
+#content1 .notice ul li ul li span {
+    float: right;
+}
