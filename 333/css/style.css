@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+
+/* font-family: 'Nanum Brush Script', cursive;
+font-family: 'Nanum Gothic', sans-serif; */
+
+/* 레이아웃 */
+#wrap {}
+#header {
+    height: 325px;
+    background: url(../img/backimg2.png) center 403px;
+}
+
+/* container */
+.container {
+    width: 990px;
+    margin: 0 auto;
+}
+
+/* header */
+.header {}
+.header .header_menu {
+    text-align: right;
+}
+.header .header_menu a {
+    color: #fff;
+}
+.header .header_title {
+    text-align: center;
+}
+.header .header_title h1 {
+    display: inline-block;
+    /* inline요소는 padding과 margin이 좌우만 적용,상하x */
+    background-color: #4aa8d4;
+    color: #fff;
+    font-style: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 40px;
+    padding: 5px 20px 6px;
+}
+.header .header_title a {
+    display: inline-block;
+    color: #fff;
+    font-style: 18px;
+    padding: 5px 20px 6px;
+    background-color: #2698cd;
+    margin-top: -5px;   /* padding은 음수를 줄 수 없음 */
+}
+.header_icon {}
+.header_icon a {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/icon.png);
+}
+.header_icon .icon1 {}
+.header_icon .icon2 {}
+.header_icon .icon3 {}
+.header_icon .icon4 {}
