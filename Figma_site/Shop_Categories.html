@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    
+</head>
+<body>
+    링크가 걸렸습니다
+
+    <div class="shop_slide">
+        <div><img src="img/caterory_slide_01.jpg" alt="이미지1"></div>
+        <div><img src="img/caterory_slide_02.jpg" alt="이미지2"></div>
+        <div><img src="img/caterory_slide_03.jpg" alt="이미지3"></div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $('.shop_slide').slick({
+            arrows : false,
+            dots : true,
+            autoplay : true,
+        });
+    </script>
+</body>
+</html>
