@@ -1,0 +1,336 @@
+@charset "UTF-8";
+
+@import url(reset.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@300&display=swap');
+/* font-family: 'Open Sans', sans-serif;
+   font-family: 'Roboto', sans-serif; */
+
+/* layout */
+.container {
+    width: 1146px;
+    margin: 0 auto;
+}
+body {
+    /* font-size: 18px;
+    line-height: 27px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal; */
+
+    /* font: font-variant font-weight font-size line-height font-family */
+    /* font: italic small-caps bold 12px/30px Georgia, serif; */
+    font: normal 18px/27px 'Open Sans', sans-serif;
+}
+a {
+    color: #f0ad64;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    border: 1px solid #f0ad64;
+    padding: 0 30px;
+    line-height: 54px;
+    display: inline-block;
+    transition: 0.3s;
+    /* =transition: 300ms; */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.btn:hover {
+    background-color: #f0ad64;
+    color: #fff;
+    text-decoration: none;
+}
+/* header */
+header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.8);
+    padding: 27px 0;
+    z-index: 100;
+}
+header .logo {
+    float: left;
+}
+header .logo a {
+    display: block;
+    width: 54px;
+    height: 54px;
+    background-image: url(../img/logo.png);
+    text-indent: -99999999em;
+}
+header nav {
+    float: right;
+}
+header nav ul {}
+header nav ul li {
+    float: left;
+    margin-left: 20px;
+}
+header nav ul li a {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 54px;
+    /* 1000 => 1em // 100 => 0.1em */
+    letter-spacing: 0.1em;
+}
+
+/* banner */
+.banner {}
+.banner .banner_list {}
+.banner .banner_list .slide {
+    height: 600px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    text-align: center;
+    padding-top: 162px;
+    box-sizing: border-box;
+}
+.banner .banner_list .slide1 {
+    background-image: url(../img/slide-1-bg.jpg);
+}
+.banner .banner_list .slide2 {
+    background-image: url(../img/slide-2-bg.jpg);
+}
+.banner .banner_list .slide3 {
+    background-image: url(../img/slide-3-bg.jpg);
+}
+.banner .banner_list .slide .main_tt {
+    color: #fff;
+    background-color: #f6604c;
+    opacity: 90%;
+    font-size: 55px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.025em; /* 25/1000 em */
+    text-transform: uppercase;
+    line-height: 54px;
+    padding: 27px 40px 27px ;
+    font-weight: 300;
+    display: inline-block;
+}
+.banner .banner_list .slide .slide_contents {
+    width: 700px;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.8);
+    padding: 81px 0 44px;
+    margin-top: -27px;
+}
+.banner .banner_list .slide .slide_contents p {
+    color: #fff;
+    margin-bottom: 54px;
+}
+.banner .banner_list .slide .slide_contents a {}
+
+
+.banner_list .slick-arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    visibility: hidden;
+    color: rgba(255,255,255,.5);
+    font-size: 55px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+/* 콘텐츠를 보이지 않게 하는 방법
+1. display: none; <=> display: block; (영역이 사라짐)
+2. opacity: 0 <=> opacity: 1 (영역이 유지) [🍮애니메이션 가능]
+3. visivility:hidden <=> visivility:visible (영역이 유지)
+4. width:0; height:0; overflow:hidden;
+*/
+.banner_list .slick-prev {
+    margin-left: -578px;
+}
+.banner_list .slick-prev::before {
+    content: "\f053";
+    visibility: visible;
+}
+.banner_list .slick-next {
+    margin-left: 528px;
+}
+.banner_list .slick-next::before {
+    content: "\f054";
+    visibility: visible;
+}
+
+.banner_list .slick-dots {
+    position: absolute;
+    left: 50%; transform: translateX(-50%);
+    bottom: 40px;
+    /* 부모가 영역깨짐현상이 일어나지 않을때
+    자식이 float있고 부모도 float이 있을떄
+    부모가 position중 absolute, fixed가 있을때 */
+}
+.banner_list .slick-dots li {
+    /* float: left; */
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255,255,255,.8);
+    margin: 0 10px;
+    border-radius: 50%;
+}
+.banner_list .slick-dots li.slick-active {
+    border: 3px solid rgba(255,255,255,.8) ;
+    background: none;
+    box-sizing: border-box;
+    vertical-align: -3px; /* <<inline-block요소의 예상못한 높이값조절위해, float:left하면 안해도된다. */
+}
+.banner_list .slick-dots li button {
+    visibility: hidden;
+}
+
+/* main_content */
+.main_content {
+    text-align: center;
+    padding: 74px 0 84px;
+}
+.main_content .content_tt {
+    font-size: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #2e2e2e;
+    letter-spacing: 0.025em;
+}
+.main_content .poject_link {
+   margin: 54px 0;
+}
+.main_content .poject_link a {
+    color: #f6604c;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
+}
+.main_content .project_list {}
+.main_content .project_list li {
+    position: relative;
+    float: left;
+    width: 362px;
+    height: 362px;
+    margin: 0 30px 30px 0;
+    border: 1px solid #919191;
+    box-sizing: border-box;
+    padding: 3px;
+}
+/* 홀수 찾는법
+.main_content .project_list li:nth-child(odd){}
+.main_content .project_list li:nth-child(2n+1){}
+짝수 찾는법
+.main_content .project_list li:nth-child(even){}
+.main_content .project_list li:nth-child(2n){} */
+
+.main_content .project_list li:nth-child(3n){
+    margin-right: 0;
+}
+.main_content .project_list li:nth-child(4),
+.main_content .project_list li:nth-child(5),
+.main_content .project_list li:nth-child(6) {
+    margin-bottom: 0;
+}
+
+.main_content .project_list li img {
+    width: 100%;
+}
+.main_content .project_list li .hover_contents {
+    opacity: 0;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background-color: rgba(0,0,0,.75);
+    padding-top: 81px;
+    transition: 0.3s;
+}
+.main_content .project_list li:hover .hover_contents {
+    opacity: 1;
+}
+.main_content .project_list li .hover_contents h4 {
+    color: #f4af55;
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    margin-bottom: 50px;
+    font-weight: 300;
+}
+.main_content .project_list li .hover_contents a {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+/* footer */
+footer {
+    position: relative;
+    text-align: center;
+}
+footer .envelop_icon {
+    position: absolute;
+    left: 50%;
+    top: -54px;
+    transform: translateX(-50%);
+    background-color: rgba(244,175,85,.9);
+    padding: 0 35px;
+}
+footer .envelop_icon i {
+    color: #fff;
+    font-size: 55px;
+    line-height: 81px;
+}
+footer .subscribe {
+    background-color: #333538;
+    padding: 81px 0 69px 0;
+}
+footer .subscribe p {
+    width: 848px;
+    color: #fff;
+    letter-spacing: 0.1em;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+footer .subscribe form {}
+footer .subscribe form input[type="email"] {
+    width: 300px;
+    height: 56px;
+    border: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-right: 17px;
+}
+footer .subscribe form input[type="email"]::placeholder {
+    font-style: italic;
+    color: #989898;
+    font-family: 'Open Sans', sans-serif;
+}
+footer .subscribe form input[type="submit"] {
+    width: 189px;
+    height: 55px;
+    background: none;
+    color: #f0ad64;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+footer form .btn {}
+footer .share {
+    margin: 54px 0;
+}
+footer .share a {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    border-radius: 3px;
+    color: #f6604c;
+    font-size: 27px;
+    margin-right: 7px;
+}
+footer .share a i {}
